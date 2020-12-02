@@ -1,8 +1,25 @@
 import random
 
+total_earned = 0
+
 def main():
+    results = []
     for i in range(0, 3):
-        spinWheel()
+       results.append(spinWheel())
+    print(results)
+
+    winner = jackpot(results)
+    if winner:
+        print("You win!")
+    else:
+        print("Sorry, please try again")
+    
+    res = count()
+    option = input("Play again? ")
+
+    if option.lower == "y" or option.lower == "yes":
+        main()
+
 
 def spinWheel():
     rand_num = random.randint(1, 20)
@@ -21,6 +38,25 @@ def spinWheel():
     else:
         output = "Bar"
     
-    print(output)
+    return output
 
-main()
+def jackpot(results):
+    return results[0] == results[1] == results[2]
+
+def count(results):
+    total = 0
+    money_dict = {
+        "Cherries": 1,
+        "Orange": .7,
+        "Plum": .6,
+        "Bell": .4,
+        "Melon": .2,
+        "Bar": .1
+    }
+
+    for i in results:
+        total += money_dict[i]
+    print(total)
+    return total + total_earned
+
+main(total_earned)
