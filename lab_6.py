@@ -1,12 +1,20 @@
 """
-We will generate a random number between 1 and 20
+import random
+num = random integer
 
-if number is greater than 15 result is "cherries"
-else if number is greater than 10 result is "orange"
-else if number is greater than 5 result is "plum"
-else if number is greater than 2 result is "Melon"
-else if number is greater than 1 result is "bell"
-else result is "bar"
+if num > 15,
+    result = cherries
+if num > 10,
+    result = orange
+if num > 5,
+    result = plum
+if num > 2,
+    result = melon
+if num > 1,
+    result = bell
+else,
+    result = bar
 
-we will iterate over a loop three times and print the result of each iteration to the user
+loop three times
+    print(fruit) to user
 """
